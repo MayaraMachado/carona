@@ -1,0 +1,72 @@
+===== Apps
+
+1- Accounts
+    |- Usuario
+        |-cpf
+        |-email
+        |-nome
+        |-sobrenome
+        |-username
+        |-senha
+    |-Telefone 
+        |-numero
+        |-cpf** Chave estrangeira de usuário
+
+2- UserTypes
+    |-Motorista
+        |-Usuario
+        |-cnh
+    |-Passageiro
+        |-Usuario
+
+
+3- Carros
+    |-Combustivel
+        |-nome
+        |-preco
+    |-Tipo
+        |-marca
+        |-modelo
+    |-tipo_tem_combustivel
+        |-combustivel**
+        |-tipo**
+    |-Carro
+        |-placa
+        |-cor
+        |-motorista**
+        |-tipo**
+
+4- Travel
+    |-Pais
+        |-nome
+        |-sigla
+    |-Estado
+        |-pais**
+        |-nome
+        |-sigla
+    |-Cidade
+        |-estado**
+        |-cidade
+    |-Trajeto
+        |-cidade_origem
+        |-cidade_destino
+    |- Viagem
+        |-carro**
+        |-passageiro**
+        |-trajeto**
+        |-custo
+        |-vagas
+
+5- Messages
+    |-Avaliacao
+        |-viagem**
+        |-nota
+        |-comentário
+    |-Conversa
+        |-mensagem*
+        |-remetente
+        |-enviado_em
+        |-imagem
+        |-mensagem
+        |-viagem**
+
