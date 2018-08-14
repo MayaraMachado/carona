@@ -10,8 +10,8 @@ class Combustivel(models.Model):
     preco = models.DecimalField('Preço', blank = False, null = False, decimal_places=2, max_digits=5)
 
     class Meta:
-        verbose_name = 'Nome'
-        verbose_name_plural = 'Nomes'
+        verbose_name = 'Combustível'
+        verbose_name_plural = 'Combustível'
 
         def __str__(self):
             return self.nome
