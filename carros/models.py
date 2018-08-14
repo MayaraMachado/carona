@@ -4,21 +4,6 @@ from django.core import validators
 import re
 from django.db import models
 
-# 3- Carros
-#     |-Combustivel
-#         |-nome
-#         |-preco
-#     |-Tipo
-#         |-marca
-#         |-modelo
-#     |-tipo_tem_combustivel
-#         |-combustivel**
-#         |-tipo**
-#     |-Carro
-#         |-placa
-#         |-cor
-#         |-motorista**
-#         |-tipo**
 
 class Combustivel(models.Model):
     nome = models.CharField('Combustível', max_length=40, blank = False, null = False)
