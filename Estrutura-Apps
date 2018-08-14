@@ -62,8 +62,7 @@
         |-viagem**
         |-nota
         |-comentário
-    |-Conversa
-        |-mensagem*
+    |-Mensagem
         |-remetente
         |-enviado_em
         |-imagem

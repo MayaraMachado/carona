@@ -3,26 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-# 4- Travel
-#     |-Pais
-#         |-nome
-#         |-sigla
-#     |-Estado
-#         |-pais**
-#         |-nome
-#         |-sigla
-#     |-Cidade
-#         |-estado**
-#         |-cidade
-#     |-Trajeto
-#         |-cidade_origem
-#         |-cidade_destino
-#     |- Viagem
-#         |-carro**
-#         |-passageiro**
-#         |-trajeto**
-#         |-custo
-#         |-vagas
 
 '''
 Ainda to pensando como vai ficar isso aqui pq pretendo usar o google maps api
