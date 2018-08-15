@@ -1,0 +1,46 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "static/head.html" %}
+</head>
+<body>
+  <header>
+    {% include "static/header.html" %}
+  </header>
+
+  <div class="container">
+        <div class="col s12" style="margin-top:5rem">
+            <form class="form-horizontal" method="post">{%csrf_token%}
+                <fieldset>
+                    {% for field in form %}
+                    <div class="form-group row {% if field.errors %} has-error {% endif %}">
+                        <label for="{{ field.auto_id }}" class="col-md-2 control-label">
+                            {{ field.label }}
+                        </label>
+                        <div class="col-md-9">
+                            {% render_field field class='form-control' %}
+                            {% for error in field.errors %}
+                            <span class="help-block">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="form-group form-row ">
+                        <button type="button submit" class="btn btn-dark">Enviar</button>
+                    </div>
+                </fieldset>
+        </form>
+              </div>
+
+  </div>
+
+  <footer class="page-footer orange">
+        {% include "static/footer.html" %}
+    </footer>
+  
+    </body>
+  </html>
+  

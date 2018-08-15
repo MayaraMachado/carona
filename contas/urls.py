@@ -18,6 +18,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.TrajetoView.as_view(), name="trajeto"),
-    path('<int:id>', views.ViagemView.as_view(), name="viagem"),
+    path('cadastro', views.RegisterView.as_view(), name="cadastrar_usuario"),
+    path('perfil', views.UserDetailsListView.as_view(), name="editar_usuario"),
 ]

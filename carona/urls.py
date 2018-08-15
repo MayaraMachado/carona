@@ -20,5 +20,6 @@ from caronaAPP import views
 urlpatterns = [
     path('', views.IndexView.as_view(), name="index"),
     path('trajeto/', include('viagem.urls')),
+    path('contas/', include('contas.urls')),
     path('admin/', admin.site.urls),
 ]

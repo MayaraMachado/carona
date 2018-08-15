@@ -6,16 +6,6 @@ from django.core import validators
 from django.contrib.auth.models import AbstractBaseUser, UserManager, PermissionsMixin
 
 
-#  |- Usuario
-#         |-cpf
-#         |-email
-#         |-nome
-#         |-sobrenome
-#         |-username
-#         |-senha
-#     |-Telefone 
-#         |-numero
-#         |-cpf** Chave estrangeira de usuário
 
 class Usuario(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(
@@ -32,11 +22,6 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     nome = models.CharField('Nome', max_length=50, blank = False)
     sobrenome = models.CharField('Sobrenome', max_length=100, blank = True )
     email = models.EmailField('Email', blank = False, unique=True)
-    cpf = models.CharField('CPF', max_length = 14, unique=True, validators=[
-        validators.RegexValidator(
-            re.compile('((\d{3}.{0,1}){3}-{0,1}\d{2})')
-        )
-    ])
     is_active = models.BooleanField(" Esta ativo ", default=True)
     is_staff = models.BooleanField('Equipe', default=True)
 

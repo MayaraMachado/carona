@@ -20,7 +20,7 @@ class UserAdmin(BaseUserAdmin):
             'fields' : ('username', 'email')
         }),
         ('Informações Básicas', {
-            'fields':('nome', 'sobrenome', 'cpf')
+            'fields':('nome', 'sobrenome')
         }),
         (
             'Permissões', {
@@ -31,7 +31,7 @@ class UserAdmin(BaseUserAdmin):
         ),
     )
     list_filter = []
-    list_display = ['username', 'nome','sobrenome', 'email', 'cpf']
+    list_display = ['username', 'nome','sobrenome', 'email']
 
 
 admin.site.register(Usuario)

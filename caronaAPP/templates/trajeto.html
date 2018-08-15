@@ -9,11 +9,42 @@
     {% include "static/header.html" %}
   </header>
     {% if id %}
-    <div class="row center">
-      <div class="row">
-        <img src="{% static 'img/mapa-viagem' %}" >
+    <div class="container">
+      <div class="row" style="margin-top: 5rem">
+        <div class="col s6">
+          <img width="100%" src="{% static 'img/mapa-viagem.jpg' %}" >
+        </div>
+        <div class="col s6">
+            <h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in aliquam dolor. </h5>     
+            
+            <!-- fim do bloco origem destino -->
+            
+            <!-- bloco de informacao do usuario -->
+            <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">filter_drama</i>Informação sobre o motorista</div>
+                    <div class="collapsible-body">
+                      {% include "component/viagem.motorista.component.html"%}
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">map</i>Trajeto</div>
+                  <div class="collapsible-body">
+                    {% include "component/viagem.trajeto.component.html"%}
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header"><i class="material-icons">attach_money</i>Preços</div>
+                  <div class="collapsible-body">
+                      {% include "component/viagem.preco.component.html"%}
+                  </div>
+                </li>
+              </ul>
+              <a href="" class="right btn waves-effect waves-light orange" type="submit" name="action">Selecionar
+                  <i class="material-icons right">send</i>
+              </a>
       </div>
-      
 
     </div>
 
@@ -22,33 +53,37 @@
     <div class="section no-pad-bot" id="index-banner">
       <div class="container">
           <br><br>
-          <div class="row center" >
+          <div class="row center section" >
             <img width="100%" src="{% static 'img/mapas-crop.jpg' %}">
             <br><br>
-            <h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in aliquam dolor. </h5>     
+            <h3 class="header col s12 light"> In in aliquam dolor. </h3>    
+            <div class="divider"></div> 
         </div>    
       </div>
     </div>
 
-      <div class"row">
-        <div class="cl-md-4">
-          {% include "component/viagem.component.html" %}
+    <div class="container">
+      <div class="row ">
+          <div class="col s12 m4">
+            {% include "component/viagem.component.html" %}
+          </div>
+          <div class="col s12 m4">
+              {% include "component/viagem.component.html" %}
+          </div>
+        
+          <div class="col s12 m4">
+            {% include "component/viagem.component.html" %}
+          </div>
+        
         </div>
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
+
   </div>
-
-
 
   <footer class="page-footer orange">
       {% include "static/footer.html" %}
   </footer>
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="{% static 'js/materialize.js' %}"></script>
-  <script src="{%  static 'js/init.js' %}"></script>
 
   </body>
 </html>
