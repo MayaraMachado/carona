@@ -2,6 +2,10 @@
 
 Projeto desenvolvido para a disciplina Banco de Dados onde será desenvolvido um aplicativo para viagens onde o usuário pode procurar carros que estão fazendo percurso de viagens inter-municipais afim de compartilhar a gasolina. 
 
+## Git clone
+
+Clone o repositório para o seu ambiente de desenvolvimento.
+
 ## Bibliotecas necessárias
 
 * django
@@ -10,6 +14,13 @@ Projeto desenvolvido para a disciplina Banco de Dados onde será desenvolvido um
 * psycopg2
 * django-suit
 * widget_tweaks
+* pytz
+
+Para instala-las basta então rodar o comando para instalação das dependências. Não esqueça de ativar primeiro o seu ambiente virtal, para que não haja conflito com dependências previamente instaladas.
+
+``` python
+pip install -r requirements.txt
+```
 
 ## Banco de dados 
 
