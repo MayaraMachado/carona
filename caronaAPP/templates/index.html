@@ -2,38 +2,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    {% include "static/head.html" %}
 </head>
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+        <header>
+          {% include "static/header.html" %}
+        </header>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Em Construção</h1>
+      <h1 class="header center orange-text">Buscar Carona</h1>
       <div class="row center">
         <h5 class="header col s12 light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in aliquam dolor. </h5>
+        <i class="large material-icons  waves-effect waves-light ">directions_car</i>      
     </div>
     <div class="row center">
-        <i class="large material-icons  waves-effect waves-light text-orange">build</i>      </div>
-      <br><br>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">directions</i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Origem</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">place</i>
+              <input id="icon_telephone" type="tel" class="validate">
+              <label for="icon_telephone">place</label>
+            </div>
+            <div>
+                <a href="{% url 'trajeto' %}" class="btn-floating btn-large waves-effect waves-light orange"><i class="material-icons prefix">airport_shuttle</i></a>
+            </div>
+          </div>
+        </form>
+      </div>
 
     </div>
   </div>
@@ -41,34 +43,7 @@
 
 
   <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in aliquam dolor. Phasellus aliquam sem magna, ut vehicula ligula interdum sed. Aenean non egestas neque, ac feugiat mauris. Mauris fermentum turpis vel lorem aliquam, sed tristique lorem eleifend. Cras in condimentum tellus.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    {% include "static/footer.html" %}
   </footer>
 
 
@@ -77,5 +52,5 @@
   <script src="{% static 'js/materialize.js' %}"></script>
   <script src="{%  static 'js/init.js' %}"></script>
 
-  </body>
+</body>
 </html>

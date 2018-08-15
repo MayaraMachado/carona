@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from caronaAPP import views
+from . import views
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name="index"),
-    path('trajeto/', include('viagem.urls')),
-    path('admin/', admin.site.urls),
+    path('', views.TrajetoView.as_view(), name="trajeto"),
 ]
