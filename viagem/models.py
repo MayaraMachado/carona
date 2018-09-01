@@ -11,6 +11,9 @@ class Custo(models.Model):
         managed = False
         db_table = 'custo'
 
+    def __str__(self):
+        return str(self.preco)
+
 class Cidade(models.Model):
     idcidade = models.IntegerField(primary_key=True)
     nome = models.CharField(max_length=45)
@@ -19,6 +22,9 @@ class Cidade(models.Model):
     class Meta:
         managed = False
         db_table = 'cidade'
+
+    def __str__(self):
+        return self.nome
 
 
 class Estado(models.Model):
@@ -30,6 +36,9 @@ class Estado(models.Model):
     class Meta:
         managed = False
         db_table = 'estado'
+    
+    def __str__(self):
+        return self.nome
 
 class Pais(models.Model):
     idpais = models.IntegerField(primary_key=True)
@@ -39,6 +48,9 @@ class Pais(models.Model):
     class Meta:
         managed = False
         db_table = 'pais'
+    
+    def __str__(self):
+        return self.nome
 
 
 class Trajeto(models.Model):
@@ -51,6 +63,8 @@ class Trajeto(models.Model):
         db_table = 'trajeto'
 
 
+    def __str__(self):
+        return self.cidade_origem.nome+" - "+self.cidade_destino.nome
 class Viagem(models.Model):
     idviagem = models.IntegerField(primary_key=True)
     custo_idcusto = models.ForeignKey(Custo, models.DO_NOTHING, db_column='custo_idcusto')
@@ -63,3 +77,6 @@ class Viagem(models.Model):
         managed = False
         db_table = 'viagem'
         unique_together = (('idviagem', 'custo_idcusto', 'trajeto_idtrajeto'),)
+
+    def __str__(self):
+        return str(self.idviagem)

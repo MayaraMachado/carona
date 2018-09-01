@@ -127,14 +127,14 @@ class DjangoSession(models.Model):
 class Telefone(models.Model):
     idtelefone = models.IntegerField(primary_key=True)
     numero = models.IntegerField()
-    usuario_idusuario = models.ForeignKey('AuthUser', models.DO_NOTHING)
+    usuario_idusuario = models.ForeignKey('AuthUser', models.DO_NOTHING, db_column='usuario_idusuario', blank=False, null=False)
 
     class Meta:
         managed = False
         db_table = 'telefone'
 
     def __str__(self):
-        return self.numero
+        return str(self.numero)
 
 
 class Usuario(models.Model):

@@ -14,7 +14,7 @@ class Motorista(models.Model):
 
 
     def __str__(self):
-        return self.usuario_idusuario
+        return self.usuario_idusuario.first_name
 
 class Passageiro(models.Model):
     idpassageiro = models.IntegerField(primary_key=True)
@@ -25,4 +25,4 @@ class Passageiro(models.Model):
         db_table = 'passageiro'
 
     def __str__(self):
-        return self.usuario_idusuario
+        return self.usuario_idusuario.first_name
