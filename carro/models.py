@@ -14,6 +14,8 @@ class Carro(models.Model):
         db_table = 'carro'
         unique_together = (('idcarro', 'motorista_idmotorista'),)
 
+    def __str__(self):
+        return self.placa
 
 class Tipo(models.Model):
     idtipo = models.IntegerField(primary_key=True)
@@ -24,6 +26,8 @@ class Tipo(models.Model):
         managed = False
         db_table = 'tipo'
 
+    def __str__(self):
+        return self.marca+" "+self.modelo
 
 
 class Combustivel(models.Model):
@@ -35,11 +39,13 @@ class Combustivel(models.Model):
         managed = False
         db_table = 'combustivel'
 
+    def __str__(self):
+        return self.nome
+
 class TipoTemCombustivel(models.Model):
     idcombustivel = models.ForeignKey(Combustivel, models.DO_NOTHING, db_column='idcombustivel', unique=False, primary_key=True)
-    idtipo = models.ForeignKey(Tipo, models.DO_NOTHING, db_column='idtipo')
+    idtipo = models.ForeignKey(Tipo, models.DO_NOTHING, db_column='idtipo', unique=False)
 
     class Meta:
         managed = False
         db_table = 'tipo_tem_combustivel'
-        unique_together = ( 'idtipo',)

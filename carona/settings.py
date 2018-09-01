@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #app
     'conta',
+    'caronaApp',
     'carro',
     'mensagem',
     'usuario_tipo',

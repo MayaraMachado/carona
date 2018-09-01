@@ -26,6 +26,7 @@ class AuthGroupPermissions(models.Model):
         unique_together = (('group', 'permission'),)
 
 
+
 class AuthPermission(models.Model):
     name = models.CharField(max_length=255)
     content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
@@ -52,6 +53,9 @@ class AuthUser(models.Model):
     class Meta:
         managed = False
         db_table = 'auth_user'
+
+    def __str__(self):
+        return self.first_name
 
 
 class AuthUserGroups(models.Model):
@@ -123,11 +127,14 @@ class DjangoSession(models.Model):
 class Telefone(models.Model):
     idtelefone = models.IntegerField(primary_key=True)
     numero = models.IntegerField()
-    usuario_idusuario = models.ForeignKey('Usuario', models.DO_NOTHING, db_column='usuario_idusuario')
+    usuario_idusuario = models.ForeignKey('AuthUser', models.DO_NOTHING)
 
     class Meta:
         managed = False
         db_table = 'telefone'
+
+    def __str__(self):
+        return self.numero
 
 
 class Usuario(models.Model):

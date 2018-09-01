@@ -1,4 +1,5 @@
 from django.db import models
+from conta.models import AuthUser
 
 
 class Avaliacao(models.Model):
@@ -27,6 +28,7 @@ class Mensagem(models.Model):
     idmensagem = models.IntegerField(primary_key=True)
     mensagem = models.TextField(blank=True, null=True)
     conversa_idconversa = models.IntegerField()
+    usuario_idusuario = models.ForeignKey(AuthUser, models.DO_NOTHING, db_column='usuario_idusuario')
 
     class Meta:
         managed = False
