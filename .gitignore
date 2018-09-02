@@ -7,4 +7,8 @@ db.sqlite3
 media
 /venv
 .env
+<<<<<<< HEAD
 /migrations/
+=======
+*/0001_initial.py
+>>>>>>> 3bd4cac2395b90fa95f50ebdb046d1afd0a483b9
