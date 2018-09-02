@@ -92,9 +92,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'carona',
-        'USER': 'caronauser',
-        'PASSWORD': 'caronapass',
-        'HOST': 'localhost',
+        'USER': 'testuser',
+        'PASSWORD': 'test',
+        'HOST': '127.0.0.1',
         'PORT': '',
     }
 }

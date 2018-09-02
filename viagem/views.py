@@ -9,4 +9,3 @@ from django.views.generic import TemplateView
 
 class TrajetoView(TemplateView):
     template_name = "trajeto.html"
-    
