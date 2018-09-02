@@ -17,8 +17,8 @@
 
 
         <h1>{{ titulo_variavel }}</h1>
-        <h2>A</h2>
-
+        {% block container %}{% endblock %}
+        <a href="{% url 'carro_create' %}">Criar carro</a>
 
     <footer>
         {% include "static/footer.html" %}

@@ -18,5 +18,5 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('index', index, name='index'),
+    path('', carro_create, name='carro_create'),
 ]
