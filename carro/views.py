@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from .functions import *
 
-def index(request):
+
+def carro_create(request):
     context ={
-        'titulo_variavel': 'Carona'
+        'form': CarroFormMotoristaAdd(request)
     }
-    return render(request, 'index.html', context)
+    return render(request, 'car_create.html', context)
