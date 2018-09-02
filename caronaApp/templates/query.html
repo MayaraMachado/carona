@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+{% load widget_tweaks %}
+
+{% block container %}
+<div class="card-body bg-white">
+        <div class="container">
+                <form class="form-horizontal" method="post">{%csrf_token%}
+                        <fieldset>
+                            {% for field in form %}
+                            <div class="form-group row {% if field.errors %} has-error {% endif %}">
+                                <label for="{{ field.auto_id }}" class="col-md-2 control-label">
+                                    <h3>{{ field.label }}</h3>
+                                </label>
+                                <div class="col-md-9">
+                                    {% render_field field class='form-control' %}
+                                    {% for error in field.errors %}
+                                    <span class="help-block">{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <div class="form-group form-row col-md-9 col-md-offset-3 " style="margin-left: 50%">
+                                <button type="button submit" class="btn btn-primary">Consultar</button>
+                            </div>
+                        </fieldset>
+                    </form>            
+        </div>
+</div>
+<div class="container"  style="padding-top: 3%">
+        <div class="row">
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">QUERY 1</h5>
+                      <p class="card-text">SELECT first_name, date_joined FROM auth_user WHERE last_name ILIKE carro ORDER BY date_joined DESC; 
+                        </p>
+                      <a href="{% url 'query_sql' 'SELECT first_name, date_joined FROM auth_user ORDER BY date_joined DESC; ' %}" 
+                      class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+</div>
+<div class="container">
+        <div class="row">
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+</div>
+
+    
+{% endblock %}
