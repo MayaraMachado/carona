@@ -36,7 +36,7 @@ class Estado(models.Model):
     class Meta:
         managed = False
         db_table = 'estado'
-    
+
     def __str__(self):
         return self.nome
 
@@ -48,7 +48,7 @@ class Pais(models.Model):
     class Meta:
         managed = False
         db_table = 'pais'
-    
+
     def __str__(self):
         return self.nome
 
@@ -79,4 +79,4 @@ class Viagem(models.Model):
         unique_together = (('idviagem', 'custo_idcusto', 'trajeto_idtrajeto'),)
 
     def __str__(self):
-        return str(self.idviagem)
+      return str(self.idviagem)

@@ -43,8 +43,8 @@ class Combustivel(models.Model):
         return self.nome
 
 class TipoTemCombustivel(models.Model):
-    idcombustivel = models.ForeignKey(Combustivel, models.DO_NOTHING, db_column='idcombustivel', unique=False, primary_key=True)
-    idtipo = models.ForeignKey(Tipo, models.DO_NOTHING, db_column='idtipo', unique=False)
+    idcombustivel = models.ForeignKey(Combustivel, models.DO_NOTHING, db_column='idcombustivel')
+    idtipo = models.ForeignKey(Tipo, models.DO_NOTHING, db_column='idtipo')
 
     class Meta:
         managed = False
