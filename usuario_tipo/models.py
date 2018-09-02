@@ -9,7 +9,7 @@ class Motorista(models.Model):
     usuario_idusuario = models.ForeignKey(AuthUser, models.DO_NOTHING, db_column='usuario_idusuario')
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'motorista'
 
 
