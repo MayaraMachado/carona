@@ -79,4 +79,4 @@ class Viagem(models.Model):
         unique_together = (('idviagem', 'custo_idcusto', 'trajeto_idtrajeto'),)
 
     def __str__(self):
-return str(self.idviagem)
+      return str(self.idviagem)
