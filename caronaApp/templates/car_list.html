@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% load widget_tweaks %}
+
+{% block container %}
+<div class="card-body">
+    <div class="container">
+        <div class="flex flex-right">
+            <a class="right btn btn-primary" href="{% url 'carro_create' %}">Criar carro</a>
+        </div>
+        <table class="table bg-white table-list">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Placa</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Número de viagens</th>                
+                </tr>
+            </thead>
+            <tbody>
+                {% for carro in carros %}
+                <tr>
+                    <td>{{ carro.placa }}</td>
+                    <td>{{ carro.placa }}</td>
+                    <td>{{ carro.placa }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -133,6 +133,9 @@ h1 {
 }
 
 /* FLEX HELPERS */
+.flex {
+    display: flex;
+}
 .flex-50 {
     display: flex;
     width: 50%;
@@ -152,6 +155,10 @@ h1 {
 
 .flex-center{
     justify-content: center;
+    align-items: center;
+}
+.flex-right {
+    justify-content: right;
     align-items: center;
 }
 
@@ -203,4 +210,13 @@ a:active, {
 
 .control-label {
     text-align: right;
+}
+
+
+.table-list {
+    margin-top: 20px;
+}
+
+.table-list tbody {
+    height: 60vh;
 }

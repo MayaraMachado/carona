@@ -3,7 +3,12 @@ from django.shortcuts import get_object_or_404
 from .functions import *
 from usuario_tipo.models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Carro
 
+def index(request):
+    user = request.user
+    carros=list(Carro.objects.filter(motorista_idmotorista=user.id))
+    return render(request, 'car_list.html', {'carros': carros })
 
 def carro_create(request):
     user = request.user
