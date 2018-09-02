@@ -2,16 +2,6 @@ from django.db import models
 from conta.models import AuthUser
 
 
-class Avaliacao(models.Model):
-    idavaliacao = models.IntegerField(primary_key=True)
-    nota = models.FloatField()
-    mensagem_idmensagem = models.ForeignKey('Mensagem', models.DO_NOTHING, db_column='mensagem_idmensagem')
-
-    class Meta:
-        managed = False
-        db_table = 'avaliacao'
-
-
 
 class Conversa(models.Model):
     idconversa = models.IntegerField(primary_key=True)
@@ -33,3 +23,12 @@ class Mensagem(models.Model):
     class Meta:
         managed = False
         db_table = 'mensagem'
+
+class Avaliacao(models.Model):
+    idavaliacao = models.IntegerField(primary_key=True)
+    nota = models.FloatField()
+    mensagem_idmensagem = models.ForeignKey('Mensagem', models.DO_NOTHING, db_column='mensagem_idmensagem')
+
+    class Meta:
+        managed = False
+        db_table = 'avaliacao'
