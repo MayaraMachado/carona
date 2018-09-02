@@ -10,45 +10,12 @@
 </head>
 
 <body class="bg-map">
-
     <header>
         {% include "static/header.html" %}
     </header>
-        <div id="main" class="container main">
-            <div class="card-body flex-50 flex-center flex-column">
-                <!-- <h1>
-                    <span class="title-big">
-                        Bem vindo ao CaronaApp!
-                    </span>
-                </h1>
-                <a class="btn btn-big" href="">
-                    Começar jornada!
-                </a> -->
-            </div>
-            <div class="card-body flex-50 flex-center">
-                <form class="form-login" action="{% url 'login' %}" method="post">{% csrf_token %}
-                    <div class="form-group {% if login_form.username.errors %}has-error{% endif %}">
-                        <label for="{{ login_form.username.auto_id }}">Login</label>
-                        {% render_field login_form.username class="form-control" %}  
-                        {% for error in login_form.username.errors %}
-                            <span class="help-block"/>{{error}}</span>
-                        {% endfor %}
-                    </div>
-                    <div class="form-group{% if login_form.password.errors %}has-error{% endif %}">
-                        <label for="{{login_form.password.auto_id}}">Senha</label>
-                        {% render_field login_form.password class="form-control" %}
-                        {% for error in login_form.password.errors %}
-                        <span class="help-block">{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'registrar' %}">Novo por aqui? Registre-se</a>                  
-                </form>
-            </div>
+        <div id="main" class="main">
+            {% block container %}{% endblock %}
         </div>
-
-
     <footer>
         {% include "static/footer.html" %}
     </footer>

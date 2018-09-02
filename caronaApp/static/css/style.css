@@ -104,23 +104,28 @@ td:first-child, th:first-child {
 html, body {
     background: #d5bb9b;
 }
-h1,h2,h3{
+
+* {
     color: #4b3a28;
 }
 .navbar {
     background: none;
 }
-.btn-big {
+.btn-primary {
     background: #0e8fbd;
 }
+
+
 /* FONTS & text */
-h1,h2,h3,h4 {
+* {
     font-family: 'Raleway', sans-serif;
+    font-weight: 500;
 }
 
 h1 {
     font-size: 3rem;
     line-height: 65px;
+    font-weight: 900 !important;
 }
 
 .title-big {
@@ -186,9 +191,16 @@ a:active, {
     background-position: center;
     background-repeat: no-repeat;
 }
+.bg-white{
+    background: #ecf0f1;
+}
 
 .form-login {
     background: #ecf0f1;
     width: 80%;
     padding: 2.5rem;
+}
+
+.control-label {
+    text-align: right;
 }
