@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'mensagem',
     'usuario_tipo',
     'viagem',
+    #libs
+    'widget_tweaks',
 
 ]
 
