@@ -5,6 +5,13 @@
 
 <h1 class="my-4">{{ formulario_titulo }}</h1>
 
+<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item {{ breadcrumb }}" aria-current="page">Home</li>
+        </ol>
+</nav>
+
+{% if form %}
         <form class="form-horizontal" method="post">{%csrf_token%}
                 <fieldset>
                     {% for field in form %}
@@ -25,6 +32,28 @@
                     </div>
                 </fieldset>
         </form>
-</div>
+{% endif %}
+
+{% if carros %}
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">Selecionar carro</label>
+        <select multiple class="form-control" id="exampleFormControlSelect2">
+          {% for carro in carros %}
+            <option>carro</option>
+        </select>
+        <a href="">Concluido</a>
+    </div>
+{% endif %}
+
+{% if concluido %}
+    <h3>Trajeto</h3>
+    <ul><li>trajeto.cidade_origem</li><li>trajeto.cidade_destino</li></ul>
+    <h3>Carro</h3>
+    <ul><li>carro.placa</li><li>carro.cor</li>
+        <li>carro.tipo_idtipo.marca - carro.tipo_idtipo.modelo</li>
+    </ul>
+    <h3>Motorista</h3>
+
+{% endif %}
 
 {% endblock %}
