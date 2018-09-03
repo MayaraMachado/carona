@@ -20,5 +20,6 @@ urlpatterns = [
     path('', include('caronaApp.urls')),
     path('carro/', include('carro.urls')),
     path('conta/', include('conta.urls')),
+    path('viagem/', include('viagem.urls')),
     path('admin/', admin.site.urls),
 ]

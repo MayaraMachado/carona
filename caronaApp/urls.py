@@ -19,4 +19,6 @@ from .views import *
 
 urlpatterns = [
     path('', index, name='index'),
+    path('query',query, name='query' ),
+    path('query/<str:sql>',query_sql, name='query_sql' ),
 ]
