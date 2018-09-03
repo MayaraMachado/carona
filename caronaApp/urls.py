@@ -20,5 +20,6 @@ from .views import *
 urlpatterns = [
     path('', index, name='index'),
     path('query',query, name='query' ),
-    path('query/<str:sql>',query_sql, name='query_sql' ),
+    path('query/busca-sql/<str:sql>',query_sql, name='query_sql' ),
+    path('query/busca-cidade', query_cidade, name='query_cidade'),
 ]

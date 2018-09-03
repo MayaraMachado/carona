@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import *
 from django.db import connection
+from viagem.models import Cidade
 
 
 # Create your views here.
@@ -31,4 +32,19 @@ def query_sql(request, sql):
             row = cursor.fetchall()
             print(row)
     return render(request, 'query_list.html', {'row':row, 'query': sql})
+
+
+def query_cidade(request):
+    form = QueryForm(request.POST or None)
+    cidade_busca = None
+    if form.is_valid():
+        cidade_busca = Cidade.buscador_cidade(form.cleaned_data['query'])
+        print(cidade_busca)
+    
+    context = {
+        'titulo_variavel': 'CaronaApp',
+        'form' : form,
+        'cidades' : cidade_busca
+    }
+    return render(request,'viagem_list.html', context) 
 

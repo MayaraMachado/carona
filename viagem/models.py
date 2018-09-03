@@ -2,6 +2,7 @@ from django.db import models
 from usuario_tipo.models import Passageiro
 from carro.models import Carro
 from mensagem.models import Avaliacao
+from django.db import connection  
 
 class Custo(models.Model):
     idcusto = models.IntegerField(primary_key=True)
@@ -25,6 +26,14 @@ class Cidade(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def buscador_cidade(param):
+        cursor = connection.cursor()
+        busca = cursor.callproc('buscar_cidades', [str(param),])
+        busca = cursor.fetchall()
+
+        return [Cidade(*row) for row in busca]  
+
 
 
 class Estado(models.Model):
