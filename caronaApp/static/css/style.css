@@ -129,7 +129,7 @@ h1 {
 }
 
 .title-big {
-    background: #d5bb9b;    
+    background: #d5bb9b;
 }
 
 /* FLEX HELPERS */
@@ -163,7 +163,7 @@ h1 {
 }
 
 /* NAVBAR */
-.navbar {    
+.navbar {
     z-index: 99999;
 }
 a,
@@ -182,8 +182,8 @@ a:active, {
 
 
 /* FORM */
-.btn {    
-    padding: 20px;    
+.btn {
+    padding: 20px;
 }
 
 .btn-big {
@@ -217,6 +217,6 @@ a:active, {
     margin-top: 20px;
 }
 
-.table-list tbody {
-    height: 60vh;
+.table-list td {
+    border-bottom: solid 1px #4b3a28;    
 }
