@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% load widget_tweaks %}
+
+{% block container %}
+
+      <div class="card-body">
+            <div class="container">
+    <table class="table bg-white table-list">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">id viagem</th>
+            <th scope="col">nome motorista</th>
+            <th scope="col">origem</th>
+            <th scope="col">destino</th>                
+            </tr>
+        </thead>
+        <tbody>
+            {% for viagem in viagens %}
+            <tr>
+                <td>{{ viagem.idviagem }}</td>
+                <td>{{viagem.carro_idcarro.motorista_idmotorista.usuario_idusuario.first_name }}</td>
+                <td>{{ viagem.trajeto_idtrajeto.cidade_origem }}</td>
+                <td>{{ viagem.trajeto_idtrajeto.cidade_destino }}</td>
+                <td><a href="{% url 'listar_mensagem' viagem.idviagem %}" class="card-link">Mensagens</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

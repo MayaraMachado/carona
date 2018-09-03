@@ -15,7 +15,25 @@
         {% include "static/header.html" %}
     </header>
         <div id="main" class="main">
-            {% block container %}{% endblock %}
+            {% block container %}
+            <div class="jumbotron" style="margin:15%; background-color: rgba(255,255,255,0.8)" >
+                    <h1 class="display-4">Bem vindo ao Carona!</h1>
+                    <p class="lead">Este é um projeto simples para a disciplina 
+                        banco de dados onde teremos acesso a realização de queries em relação ao banco Carona.</p>
+                    <hr class="my-4">
+                    <p>Você pode iniciar o acesso indo direto para as telas onde terá acesso às queries, ou experimentar
+                        ou testar algumas funcionalidades de adição de carros e viagens antes de testar.</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="{% url 'listar_viagem' %}" role="button">Viagens</a>
+                      <a class="btn btn-primary btn-lg" href="{% url 'query_cidade' %}" role="button">Cidades</a>
+                      <a class="btn btn-primary btn-lg" href="{% url 'top_motorista' %}" role="button">Top Motoristas</a>
+                      <a class="btn btn-primary btn-lg" href="{% url 'freq_cidade' %}" role="button">Frequência nas cidades</a>
+                      <a class="btn btn-primary btn-lg" href="{% url 'media_motorista' %}" role="button">Media geral</a>
+                      <a class="btn btn-primary btn-lg" href="{% url 'media_salarial' %}" role="button">Media de valores</a>
+                    </p>
+                  </div>
+            
+            {% endblock %}
         </div>
     <footer>
         {% include "static/footer.html" %}

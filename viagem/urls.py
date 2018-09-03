@@ -19,4 +19,7 @@ from .views import *
 
 urlpatterns = [
     path('criar/', criar_viagem, name="criar_viagem" ),
+    path('listar/', listar_viagem, name="listar_viagem" ),
+    path('listar-mensagens/<int:id>', listar_mensagens, name="listar_mensagem" ),
+
 ]

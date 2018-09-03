@@ -5,7 +5,7 @@ from usuario_tipo.models import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Carro
 
-def index(request):
+def viagens(request):
     user = request.user
     carros=list(Carro.objects.filter(motorista_idmotorista=user.id))
     #stored procedurepara contar viagens

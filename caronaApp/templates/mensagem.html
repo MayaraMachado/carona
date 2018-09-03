@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% load widget_tweaks %}
+
+{% block container %}
+
+      <div class="card-body">
+            <div class="container">
+    <table class="table bg-white table-list">
+        <thead class="thead-dark">
+        </thead>
+        <tbody>
+            {% for mensagem in mensagens %}
+            <tr>
+                {% for field in mensagem %}
+                <td>{{ field }}</td>
+                {% endfor %}
+                
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

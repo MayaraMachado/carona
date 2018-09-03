@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% load widget_tweaks %}
+
+{% block container %}
+<div class="card-body">
+
+        </div>
+        <table class="table bg-white table-list ">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>                
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in row %}
+                <tr>
+                    <td></td>
+                    {% for field in obj %}
+                        <td>{{ field }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

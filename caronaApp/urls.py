@@ -22,4 +22,9 @@ urlpatterns = [
     path('query',query, name='query' ),
     path('query/busca-sql/<str:sql>',query_sql, name='query_sql' ),
     path('query/busca-cidade', query_cidade, name='query_cidade'),
+    path('query/top-motorista', top_motorista, name='top_motorista'),
+    path('query/freq_cidade', freq_cidade, name='freq_cidade'),
+    path('query/med-motorista', media_motorista, name='media_motorista'),
+    path('query/valores', media_salarial, name='media_salarial'),
+
 ]
