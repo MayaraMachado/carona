@@ -2,6 +2,7 @@
 
 Projeto desenvolvido para a disciplina Banco de Dados onde será desenvolvido um aplicativo para viagens onde o usuário pode procurar carros que estão fazendo percurso de viagens inter-municipais afim de compartilhar a gasolina. 
 
+
 ## Bibliotecas necessárias
 
 * django
@@ -10,6 +11,20 @@ Projeto desenvolvido para a disciplina Banco de Dados onde será desenvolvido um
 * psycopg2
 * django-suit
 * widget_tweaks
+
+## Rodando o projeto pela primeira vez
+
+O projeto foi criado utilizando pyhon 3.7 e django 2.0.6 e para rodá-lo é preciso instalar as versões das libs citadas no tópico anterior, para isso basta primeiro ativar a virtual env do projeto.
+
+```python
+pip install virtualenv 
+virtualenv caronavenv
+source caronavenv/bin/activate
+```
+Após ativar o ambiente virtual deve-se instalar os requirements.
+```python
+pip install -r requirements.txt
+```
 
 ## Banco de dados 
 
@@ -34,16 +49,22 @@ por uma com as informações do banco de dados.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'database_name',
-        'USER': 'database_user',
-        'PASSWORD': 'database_password',
-        'HOST': 'localhost',
+        'OPTIONS' : {
+            'options' : '-c search_path=carona'
+        }
+        'NAME': 'os.getenv(database_name)',
+        'USER': 'os.getenv(database_user)',
+        'PASSWORD': 'os.getenv(database_password)',
+        'HOST': 'os.getenv(localhost)',
         'PORT': '',
     }
 }
 ```
+Vale ressaltar que o vínculo do django com um banco postgresql se dá através da conexão do projeto com um banco de dados já existente, por isso, para que seu projeto rode devidamente certifique-se de que você está conectando o seu projeto a um banco de dados existente e que a conexão esteja configurada corretamente.
 
-## Rodar o app
+As credenciais em settings.py são salvas em um arquivo .env que é referenciado no settings através do método os.getenv().
+
+## Executar o app
 
 Para rodar o app basta copiar esses comandos no seu terminal.
 
