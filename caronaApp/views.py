@@ -61,7 +61,7 @@ def top_motorista(request):
 
 
 def media_motorista(request):
-    sql_string="SELECT * FROM (SELECT au.first_name as nome, placa, media FROM (SELECT c.placa as placa, avg(a.nota) as media, c.motorista_idmotorista as motorista FROM public.viagem v INNER JOIN public.avaliacao a on v.avaliacao_idavaliacao = a.idavaliacao INNER JOIN public.carro c on c.idcarro = v.carro_idcarro GROUP BY placa, motorista ) as query1 INNER JOIN motorista m ON m.idmotorista = motorista INNER JOIN public.auth_user au on au.id = m.usuario_idusuario GROUP BY nome, placa, media, motorista ) as query2 GROUP BY nome, placa, media"
+    sql_string="SELECT * FROM (SELECT au.first_name as nome, placa, media FROM (SELECT c.placa as placa, round(CAST(avg(a.nota) as numeric), 2) as media, c.motorista_idmotorista as motorista FROM public.viagem v INNER JOIN public.avaliacao a on v.avaliacao_idavaliacao = a.idavaliacao INNER JOIN public.carro c on c.idcarro = v.carro_idcarro GROUP BY placa, motorista ) as query1 INNER JOIN motorista m ON m.idmotorista = motorista INNER JOIN public.auth_user au on au.id = m.usuario_idusuario GROUP BY nome, placa, media, motorista ) as query2 GROUP BY nome, placa, media"
     with connection.cursor() as cursor:
             cursor.execute(sql_string)
             row = cursor.fetchall()

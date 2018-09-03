@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'viagem',
     #libs
     'widget_tweaks',
+    'django.contrib.humanize',
 
 ]
 
