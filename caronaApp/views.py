@@ -61,7 +61,7 @@ def top_motorista(request):
 
 
 def media_motorista(request):
-    sql_string="SELECT * FROM (SELECT au.first_name as nome, placa, media FROM (SELECT c.placa as placa, round(CAST(avg(a.nota) as numeric), 2) as media, c.motorista_idmotorista as motorista FROM public.viagem v INNER JOIN public.avaliacao a on v.avaliacao_idavaliacao = a.idavaliacao INNER JOIN public.carro c on c.idcarro = v.carro_idcarro GROUP BY placa, motorista ) as query1 INNER JOIN motorista m ON m.idmotorista = motorista INNER JOIN public.auth_user au on au.id = m.usuario_idusuario GROUP BY nome, placa, media, motorista ) as query2 GROUP BY nome, placa, media"
+    sql_string="SELECT * FROM (SELECT au.first_name as nome, placa, media FROM (SELECT c.placa as placa, round(CAST(avg(a.nota) as numeric), 2) as media, c.motorista_idmotorista as motorista FROM viagem v INNER JOIN avaliacao a on v.avaliacao_idavaliacao = a.idavaliacao INNER JOIN carro c on c.idcarro = v.carro_idcarro GROUP BY placa, motorista ) as query1 INNER JOIN motorista m ON m.idmotorista = motorista INNER JOIN auth_user au on au.id = m.usuario_idusuario GROUP BY nome, placa, media, motorista ) as query2 GROUP BY nome, placa, media"
     with connection.cursor() as cursor:
             cursor.execute(sql_string)
             row = cursor.fetchall()
@@ -78,7 +78,7 @@ def media_salarial(request):
 
     
 def freq_cidade(request):
-    sql_string="SELECT c.idcidade, c.nome, count(1) AS frequencia FROM viagem v JOIN trajeto t on v.trajeto_idtrajeto = t.idtrajeto JOIN cidade c on t.cidade_origem = c.idcidade group by c.idcidade UNION ALL SELECT idcidade, nome, count (1) AS frequencia FROM viagem v JOIN trajeto t on v.trajeto_idtrajeto = t.idtrajeto JOIN cidade c3 on t.cidade_destino = c3.idcidade group by idcidade;"
+    sql_string="SELECT c.idcidade, c.nome, count(1) AS frequencia FROM viagem v JOIN trajeto t on v.trajeto_idtrajeto = t.idtrajeto JOIN cidade c on t.cidade_origem = c.idcidade group by c.idcidade UNION ALL SELECT idcidade, nome, count (1) AS frequencia FROM viagem v JOIN trajeto t on v.trajeto_idtrajeto = t.idtrajeto JOIN cidade c3 on t.cidade_destino = c3.idcidade group by idcidade ORDER BY frequencia desc;"
     with connection.cursor() as cursor:
             cursor.execute(sql_string)
             row = cursor.fetchall()

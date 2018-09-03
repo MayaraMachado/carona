@@ -102,10 +102,13 @@ WSGI_APPLICATION = 'carona.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'OPTIONS' : {
+            'options' : '-c search_path=carona' 
+        },
         'NAME': os.getenv("DATABASE"),
         'USER': os.getenv("LOGIN"),
         'PASSWORD': os.getenv("PASS"),
-        'HOST': '127.0.0.1',
+        'HOST': os.getenv("HOST"),
         'PORT': '',
     }
 }
