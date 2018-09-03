@@ -13,17 +13,22 @@
                 <th scope="col">Placa</th>
                 <th scope="col">Cor</th>
                 <th scope="col">Tipo</th>
-                <th scope="col">Número de viagens</th>                
+                <th scope="col">Número de viagens</th>
                 </tr>
             </thead>
             <tbody>
                 {% for carro in carros %}
                 <tr>
                     <td>{{ carro.placa }}</td>
-                    <td>{{ carro.placa }}</td>
-                    <td>{{ carro.placa }}</td>
+                    <td>{{ carro.cor }}</td>
+                    <td>{{ carro.tipo_nome }}</td>
                     <td>{{ numero_viagens }}</td>
                 </tr>
+                <tr>
+                        <td>{{ carro.placa }}</td>
+                        <td>{{ carro.cor }}</td>
+                        <td>{{ carro.tipo_nome }}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
